@@ -1,29 +1,30 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
     title: 'The Obsidian Penthouse',
     category: 'Residential',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/portfolio_1_1775935312965.png',
     aspect: 'aspect-[4/3] md:col-span-2'
   },
   {
     title: 'Aura Spa Retreat',
     category: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80&w=800',
+    image: '/images/portfolio_4_1775935356292.png',
     aspect: 'aspect-[3/4]'
   },
   {
     title: 'Minimalist Haven',
     category: 'Residential',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800',
+    image: '/images/portfolio_3_1775935342676.png',
     aspect: 'aspect-[3/4]'
   },
   {
     title: 'Lumina Corporate',
     category: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/portfolio_2_1775935328231.png',
     aspect: 'aspect-[4/3] md:col-span-2'
   }
 ];
@@ -90,15 +91,16 @@ const ShowcaseGrid: React.FC = () => {
         </div>
         
         <div className="mt-20 text-center">
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="#"
-            className="inline-block px-12 py-5 border border-[#D4AF37]/40 text-[#D4AF37] text-sm font-semibold uppercase tracking-widest relative overflow-hidden group transition-all duration-300 shadow-[0_0_20px_-5px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_-5px_rgba(212,175,55,0.4)]"
-          >
-            <span className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-            <span className="relative z-10 group-hover:text-black transition-colors duration-300">View Full Portfolio</span>
-          </motion.a>
+          <Link to="/portfolio" className="inline-block relative group">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-12 py-5 border border-[#D4AF37]/40 text-[#D4AF37] text-sm font-semibold uppercase tracking-widest relative overflow-hidden transition-all duration-300 shadow-[0_0_20px_-5px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_-5px_rgba(212,175,55,0.4)]"
+            >
+              <span className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
+              <span className="relative z-10 group-hover:text-black transition-colors duration-300">Explore More</span>
+            </motion.div>
+          </Link>
         </div>
       </div>
     </section>

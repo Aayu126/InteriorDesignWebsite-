@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './index.css'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
@@ -7,24 +8,35 @@ import ServicesSection from './components/ServicesSection'
 import BookingSection from './components/BookingSection'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import PortfolioPage from './pages/PortfolioPage'
+
+function Home() {
+  return (
+    <main>
+      <HeroSection />
+      <AboutSection />
+      <ShowcaseGrid />
+      <ServicesSection />
+      <BookingSection />
+    </main>
+  )
+}
 
 function App() {
   return (
-    <div className="bg-black text-foreground min-h-screen">
-      <Navbar />
-      
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ShowcaseGrid />
-        <ServicesSection />
-        <BookingSection />
-      </main>
+    <Router>
+      <div className="bg-black text-foreground min-h-screen">
+        <Navbar />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+        </Routes>
 
-      <Footer />
-      
-      <ScrollToTop />
-    </div>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </Router>
   )
 }
 
