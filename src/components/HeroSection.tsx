@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
           className="font-display text-5xl md:text-7xl lg:text-[7.5rem] text-white mb-8 leading-[1.05]"
         >
           Curating Timeless <br className="hidden md:block" />
-          <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-yellow-200">Elegance</span>
+          <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-yellow-200 pr-4 pb-2">Elegance</span>
         </motion.h1>
 
         <motion.p
