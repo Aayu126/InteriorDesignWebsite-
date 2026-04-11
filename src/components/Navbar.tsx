@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import clsx from 'clsx';
@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
   });
 
   const navLinks = [
+    { name: 'Home', href: '#' },
     { name: 'Philosophy', href: '#about' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Services', href: '#services' },

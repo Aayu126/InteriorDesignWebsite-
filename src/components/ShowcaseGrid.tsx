@@ -41,21 +41,21 @@ const ProjectCard = ({ project }: { project: any }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100, scale: 0.9, rotateX: 10 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`group overflow-hidden relative cursor-pointer ${project.aspect}`}
+      transition={{ duration: 1, type: "spring", bounce: 0.2 }}
+      className={`group overflow-hidden relative cursor-pointer ${project.aspect} transform-gpu`}
     >
       {/* Background shadow/overlay */}
-      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-700 z-10" />
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors duration-700 z-10" />
       
       {/* Image with Scroll Parallax AND Hover Scale */}
       <motion.div style={{ y: yPos, scale }} className="w-full h-[115%] absolute -top-[10%] left-0">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out origin-center"
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out origin-center"
         />
       </motion.div>
       
@@ -90,12 +90,15 @@ const ShowcaseGrid: React.FC = () => {
         </div>
         
         <div className="mt-20 text-center">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="#"
-            className="inline-block px-12 py-4 border border-white/20 text-white text-sm font-semibold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+            className="inline-block px-12 py-5 border border-[#D4AF37]/40 text-[#D4AF37] text-sm font-semibold uppercase tracking-widest relative overflow-hidden group transition-all duration-300 shadow-[0_0_20px_-5px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_-5px_rgba(212,175,55,0.4)]"
           >
-            View Full Portfolio
-          </a>
+            <span className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
+            <span className="relative z-10 group-hover:text-black transition-colors duration-300">View Full Portfolio</span>
+          </motion.a>
         </div>
       </div>
     </section>

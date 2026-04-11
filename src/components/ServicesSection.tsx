@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Home, Building2, Paintbrush2, Compass } from 'lucide-react';
 
 const services = [
@@ -25,19 +25,27 @@ const services = [
   }
 ];
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
+      staggerChildren: 0.2,
+      delayChildren: 0.1
     }
   }
 };
 
-const item = {
-  hidden: { opacity: 0, y: 50, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, type: "spring", bounce: 0.3 } }
+const item: Variants = {
+  hidden: { opacity: 0, y: 80, scale: 0.8, rotateX: -20, rotateY: -10 },
+  show: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1, 
+    rotateX: 0, 
+    rotateY: 0,
+    transition: { duration: 1.2, type: "spring", bounce: 0.4 } 
+  }
 };
 
 const ServicesSection: React.FC = () => {
@@ -78,9 +86,12 @@ const ServicesSection: React.FC = () => {
               <motion.div
                 key={index}
                 variants={item}
-                className="liquid-glass p-10 rounded-lg group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-20px_rgba(212,175,55,0.15)]"
+                className="liquid-glass p-10 rounded-xl group hover:-translate-y-3 transition-all duration-500 hover:shadow-[0_20px_40px_-20px_rgba(212,175,55,0.3)] hover:border-[#D4AF37]/40 border border-white/5 transform-gpu relative overflow-hidden"
               >
-                <div className="text-[#D4AF37] mb-8 group-hover:scale-110 transition-transform duration-500 origin-left">
+                {/* Hover gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="text-[#D4AF37] mb-8 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 origin-left relative z-10">
                   {service.icon}
                 </div>
                 <h4 className="font-display text-2xl text-white mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">{service.title}</h4>
