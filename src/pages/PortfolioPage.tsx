@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -65,7 +65,7 @@ const PortfolioPage = () => {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
-        className="container mx-auto mb-12"
+        className="absolute top-8 left-6 md:top-12 md:left-12 z-50"
       >
         <Link to="/" className="inline-flex items-center gap-3 text-white/60 hover:text-[#D4AF37] transition-colors uppercase tracking-widest text-xs font-semibold group">
           <ArrowLeft size={16} className="transform group-hover:-translate-x-1 transition-transform" />
