@@ -1,68 +1,100 @@
-# Velorah - Cinematic Scrollytelling
+<div align="center">
+  <h1>✨ Velorah - Interior Design Studio ✨</h1>
+  <p><strong>A premium, cinematic scrollytelling web experience for modern interior design.</strong></p>
 
-A cinematic scrollytelling experience with canvas-based frame animation controlled by scroll position.
+  <p>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
+    <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" alt="GSAP" />
+    <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  </p>
+</div>
 
-## Features
+<br />
 
-- **Scroll-Controlled Animation**: 240 frames of animation driven by scroll position
-- **Canvas Rendering**: High-performance HTML5 canvas with object-fit: cover logic
-- **Mouse Parallax**: Interactive 3D depth effect with GSAP animations
-- **Loading Screen**: Real-time percentage display during frame preloading
-- **Glassmorphic UI**: Liquid-glass navigation and buttons
-- **Cinematic Typography**: Instrument Serif and Inter fonts
-- **Smooth Scrolling**: GSAP ScrollToPlugin for buttery-smooth navigation
-- **Responsive Design**: Adapts to any screen size with zoom factor
+## 📖 Overview
 
-## Technical Stack
+**Velorah** is a visually stunning, high-performance web application tailored for an elite interior design studio. It leverages modern web technologies to create an immersive, cinematic experience. By combining scroll-controlled canvas animations, interactive 3D parallax effects, and buttery-smooth page transitions, the platform is designed to leave a lasting impression on visitors.
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- GSAP (with ScrollToPlugin)
-- HTML5 Canvas
+## 🚀 Key Features
 
-## Getting Started
+- **Cinematic Scrollytelling:** 240 high-resolution frames of animation seamlessly controlled by the user's scroll position, creating an interactive film-like journey.
+- **High-Performance Canvas Rendering:** Utilizes an HTML5 canvas with intelligent `object-fit: cover` logic, dynamically resizing and adapting to any aspect ratio without performance drops.
+- **Immersive Mouse Parallax:** Interactive 3D depth effects powered by GSAP, reacting smoothly to mouse movement for an engaging UX.
+- **Intelligent Preloading:** Real-time percentage display during asset preloading to ensure smooth playback without buffering.
+- **Premium Aesthetics:** Features a dark, glassmorphic UI, liquid-glass navigation, and elegant typography (Instrument Serif and Inter).
+- **Interactive Portfolio Gallery:** A curated exhibition section powered by `framer-motion` for complex scroll-triggered layout animations.
+- **Fully Responsive:** Adapts flawlessly to any screen size, guaranteeing a premium experience on desktop, tablet, and mobile.
 
-1. Install dependencies:
-```bash
-npm install
-```
+## 🛠️ Technology Stack
 
-2. Run development server:
-```bash
-npm run dev
-```
+- **Framework:** React 18
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS, `clsx`, `tailwind-merge`
+- **Animations:** GSAP (ScrollToPlugin) & Framer Motion
+- **Icons:** Lucide React
+- **Routing:** React Router DOM
+- **Build Tool:** Vite
 
-3. Build for production:
-```bash
-npm run build
-```
+## ⚙️ Getting Started
 
-## How It Works
+Follow these steps to set up the project locally.
 
-### Frame Preloading
-All 240 frames are preloaded into memory before the experience starts. A loading screen displays real-time progress.
+### Prerequisites
 
-### Scroll-to-Frame Mapping
-- Container height: 500vh (creates long scrollable area)
-- Scroll position maps to frame index (0-239)
-- Uses `requestAnimationFrame` for smooth 60fps rendering
+Make sure you have [Node.js](https://nodejs.org/) (v16+ recommended) and `npm` installed.
 
-### Canvas Rendering
-- Fullscreen canvas with `object-fit: cover` logic
-- Zoom factor of 1.35x to hide letterboxing
-- Automatic aspect ratio calculation
-- Dynamic resizing on window resize
+### Installation
+
+1. **Clone the repository** (if not already local)
+   ```bash
+   git clone https://github.com/Aayu126/InteriorDesignWebsite-.git
+   cd InteriorDesignWebsite-
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview the production build**
+   ```bash
+   npm run preview
+   ```
+
+## 🧠 Architecture & Logic
+
+### Frame Preloading & Canvas Rendering
+All 240 frames are preloaded into memory before the experience starts. The scroll position is mapped linearly to a frame index (0-239). The canvas employs a `requestAnimationFrame` loop for a butter-smooth 60fps render. A zoom factor of 1.35x ensures no letterboxing occurs, creating a true full-screen cinematic effect.
 
 ### Mouse Parallax
-- Canvas scaled to 1.05x to prevent edge visibility
-- GSAP smooth animation in opposite direction of mouse movement
-- Creates subtle 3D depth effect
+The canvas is intentionally scaled to 1.05x to prevent viewport edge clipping during mouse movement. GSAP smoothly translates the background in the opposite direction of the cursor, creating a subtle, highly premium 3D depth illusion.
 
-## Configuration
+## 🔧 Configuration
 
-Edit `src/components/ScrollytellingCanvas.tsx` to adjust:
+You can easily adjust the core animation parameters by editing `src/components/ScrollytellingCanvas.tsx`:
 
-- `TOTAL_FRAMES`: Number of frames (currently 240)
-- `ZOOM_FACTOR`: Zoom level (currently 1.35)
-- `SCROLL_HEIGHT`: Scroll distance in vh (currently 500vh)
+- `TOTAL_FRAMES`: Number of scroll frames (default: `240`)
+- `ZOOM_FACTOR`: Controls the fill scale (default: `1.35`)
+- `SCROLL_HEIGHT`: Distance required to complete the animation (default: `500vh`)
+
+## 🤝 Deployment
+
+This project is fully optimized and deployment-ready for platforms like **Vercel**, **Netlify**, or **Cloudflare Pages**. Simply connect your GitHub repository to your preferred host, and the build settings will be automatically detected (`npm run build`, output directory: `dist`).
+
+---
+<div align="center">
+  <p>Built with passion for digital craftsmanship and design excellence.</p>
+</div>
