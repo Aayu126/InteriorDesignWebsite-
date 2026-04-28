@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
   <h1>✨ Velorah - Interior Design Studio ✨</h1>
   <p><strong>A premium, cinematic scrollytelling web experience for modern interior design.</strong></p>
@@ -11,8 +12,9 @@
     <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
   </p>
 </div>
+<!-- markdownlint-enable MD033 MD041 -->
 
-<br />
+
 
 ## 📖 Overview
 
@@ -49,27 +51,32 @@ Make sure you have [Node.js](https://nodejs.org/) (v16+ recommended) and `npm` i
 ### Installation
 
 1. **Clone the repository** (if not already local)
+
    ```bash
    git clone https://github.com/Aayu126/InteriorDesignWebsite-.git
    cd InteriorDesignWebsite-
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
 
 4. **Build for production**
+
    ```bash
    npm run build
    ```
 
 5. **Preview the production build**
+
    ```bash
    npm run preview
    ```
@@ -77,9 +84,11 @@ Make sure you have [Node.js](https://nodejs.org/) (v16+ recommended) and `npm` i
 ## 🧠 Architecture & Logic
 
 ### Frame Preloading & Canvas Rendering
+
 All 240 frames are preloaded into memory before the experience starts. The scroll position is mapped linearly to a frame index (0-239). The canvas employs a `requestAnimationFrame` loop for a butter-smooth 60fps render. A zoom factor of 1.35x ensures no letterboxing occurs, creating a true full-screen cinematic effect.
 
 ### Mouse Parallax
+
 The canvas is intentionally scaled to 1.05x to prevent viewport edge clipping during mouse movement. GSAP smoothly translates the background in the opposite direction of the cursor, creating a subtle, highly premium 3D depth illusion.
 
 ## 🔧 Configuration
@@ -95,6 +104,8 @@ You can easily adjust the core animation parameters by editing `src/components/S
 This project is fully optimized and deployment-ready for platforms like **Vercel**, **Netlify**, or **Cloudflare Pages**. Simply connect your GitHub repository to your preferred host, and the build settings will be automatically detected (`npm run build`, output directory: `dist`).
 
 ---
+<!-- markdownlint-disable MD033 -->
 <div align="center">
   <p>Built with passion for digital craftsmanship and design excellence.</p>
 </div>
+<!-- markdownlint-enable MD033 -->
